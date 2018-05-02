@@ -1,0 +1,73 @@
+{
+	"_version": "1.1.0",
+	"sap.app": {
+		"_version": "1.1.0",
+		"id": "sap.ui.veh_campanias",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"title": "PORTAL VEHICULOS",
+		"description": "Portal Vehiculos",
+		"applicationVersion": {
+			"version": "1.0.0"
+		}
+	},
+	"sap.ui": {
+		"_version": "1.1.0",
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"_version": "1.1.0",
+		"rootView": "sap.ui.veh_campanias.view.App",
+		"dependencies": {
+			"minUI5Version": "1.30",
+			"libs": {
+				"sap.m": {}
+			}
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "sap.ui.veh_campanias.i18n.i18n"
+				}
+			}
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "sap.ui.veh_campanias.view",
+				"controlId": "app",
+				"controlAggregation": "pages",
+				"transition": "slide"
+			},
+			"routes": [
+				{
+					"pattern": "",
+					"name": "home",
+					"target": "home"
+				}
+			],
+			"targets": {
+				"home": {
+					"path": "sap.ui.veh_campanias.view",
+					"viewName": "Home",
+					"viewId": "viewHome",
+					"viewLevel": 1
+				}
+			}
+		}
+	},
+	"sap.platform.hcp": {
+		"uri": "",
+		"_version": "1.1.0"
+	}
+}

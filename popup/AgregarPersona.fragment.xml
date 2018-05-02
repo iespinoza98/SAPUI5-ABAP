@@ -1,0 +1,69 @@
+<c:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:c="sap.ui.core"    
+    xmlns:l="sap.ui.layout"
+    controllerName="sap.ui.veh_campanias.controller.Home">
+    <Dialog title = "Agregar Persona" afterClose= "onCancelAPersona" enableScrolling="true">
+        <l:VerticalLayout>
+            <f:SimpleForm id="SimpleFormDisplay354"
+                layout="ResponsiveGridLayout"
+                labelSpanXL="3"
+                labelSpanL="3"
+                labelSpanM="3"
+                labelSpanS="12"
+                emptySpanXL="4"
+                emptySpanL="4"
+                emptySpanM="4"
+                emptySpanS="0"
+                columnsXL="1"
+                columnsL="1"
+                columnsM="1"
+                singleContainerFullSize="false">
+                <f:content>
+                    <c:Title text="" />
+                    <Label text="Nombre Completo" labelFor="idNombreCompleto"/>
+                    <Input id="idNombreCompleto" class="text-mayus"/>
+
+                    <Label text="Apellido Paterno" textFor="idApePat"/>
+                    <Input id="idApePat"/>
+
+                    <Label text="Apellido Materno" textFor="idApeMat"/>
+                    <Input id="idApeMat"/>
+
+                    <Label text="Sexo" />
+                    <RadioButton text="Masculino" id="idMas" group="sexo" value="M"/>
+                    <RadioButton text="Femenino" id="idFem" group="sexo" value="S"/>
+
+                    <Label text="Especialidad"/>
+                    <Select id="idEspecialidad" selectedKey="0001" items="{path:'/'}">
+                        <c:Item key="{idespecialidad}" text="{descripcion}"/>
+                    </Select>
+
+                    <Label text="Idiomas"/>
+                    <Select id="idIdioma" selectedKey="01">
+                        <c:Item key="01" text="Español"/>
+                        <c:Item key="02" text="Inglés"/>
+                    </Select>
+
+                </f:content>
+            </f:SimpleForm>
+
+        </l:VerticalLayout>
+        <beginButton>
+            <Button 
+                text="Agregar"
+                press="onAceptAddPersona"
+                type="Accept"
+                icon="sap-icon://accept"/>
+        </beginButton>
+        <endButton>
+            <Button 
+                text="Cancelar"
+                press="onCancelAPersona"
+                type="Reject"
+                icon="sap-icon://decline"/>
+        </endButton>
+    </Dialog>
+</c:FragmentDefinition>

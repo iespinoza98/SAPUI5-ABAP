@@ -1,0 +1,67 @@
+<mvc:View 
+    controllerName="sap.ui.veh_campanias.controller.Home" 
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:u="sap.ui.unified"
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+    xmlns:c="sap.ui.core"
+    xmlns:m="sap.ui.table"
+    xmlns="sap.m">
+    <Page title="Personas" showNavButton="true" navButtonPress="onNavBack">
+       
+        <l:VerticalLayout
+            class="sapUiContentPadding"
+            width="100%">
+            <Table id="TBPersonas" items="{path: '/'}" mode="SingleSelectLeft" selectionChange="onChangeItem">
+                <headerToolbar>
+                    <Toolbar>
+                        <content>
+                            <ToolbarSpacer />
+                            <Button text="Refrescar Tabla" press="onInit" icon="sap-icon://refresh"/>
+                            <Button text="Agregar Persona" press="onAgregarPersona" icon="sap-icon://add"/>
+                            <Button text="Modificar Persona" press="onEditarPersona" icon="sap-icon://edit"/>
+                            <Button text="Eliminar Persona" press="onEliminarPersona" icon="sap-icon://decline"/>
+                            <!-- <Button text="MOSTRAR Persona" press="getForHor" icon="sap-icon://decline"/> -->
+                        </content>
+                    </Toolbar>
+                </headerToolbar>
+                <columns>
+                    <Column visible="false">
+                        <Label text="Id Persona" />
+                    </Column>
+                    <Column>
+                        <Label text="Nombres" />
+                    </Column>
+                    <Column>
+                        <Label text="Ape. Paterno" />
+                    </Column>
+                    <Column>
+                        <Label text="Ape. Materno" />
+                    </Column>
+                    <Column>
+                        <Label text="Sexo" />
+                    </Column>
+                    <Column width="15rem">
+                        <Label text="Especialidad" />
+                    </Column>
+                    <Column>
+                        <Label text="Idioma" />
+                    </Column>
+                </columns>
+                <items>
+                    <ColumnListItem>
+                        <cells>
+                           <Text text="{idpersona}" visible="false"/>
+                           <Text text="{nombres}" />
+                           <Text text="{apellido_pat}" />
+                           <Text text="{apellido_mat}" />
+                           <Text text="{path: 'sexo', formatter: '.formatter.getSexo'}" />
+                           <Text text="{path: 'especialidad', formatter: '.formatter.getEspecialidad'}" />
+                           <Text text="{path: 'idiomas', formatter: '.formatter.getIdioma'}" />
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </l:VerticalLayout> 
+    </Page>
+</mvc:View>
